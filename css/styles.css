@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "GothicBold";
+  src: url(../public/fonts/GOTHICB.TTF); }
+
+@font-face {
+  font-family: "GothicRegular";
+  src: url(../public/fonts/GOTHIC.TTF); }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /*Equivalent to 10px*/
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "GothicBold", sans-serif;
+  overflow-x: hidden;
+  background-color: #ffffff; }

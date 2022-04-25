@@ -1,0 +1,14 @@
+{
+  "name": "personal_portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/scss/styles.scss css/styles.css -w"
+  },
+  "author": "Dee Sepulveda",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
