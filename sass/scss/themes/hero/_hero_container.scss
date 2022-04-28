@@ -4,18 +4,54 @@
   margin: 0 auto;
   @include flex-center-col;
 
+  @include tabletLandscape {
+    & {
+      height: 90%;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
   .title,
   .subtitle {
     margin-bottom: 4rem;
     font-family: "GothicBold", sans-serif;
+
+    @include tabletPortrait {
+      & {
+        margin-bottom: 6rem;
+      }
+    }
   }
 
   .title {
-    width: 28rem;
+    width: 100%;
 
     .title-img {
-      @include keep-it-hundo;
+      width: 80%;
+      height: 100%;
       object-fit: contain;
+
+      @include tabletPortrait {
+        & {
+          width: 50%;
+        }
+      }
+
+      @include tabletLandscape {
+        & {
+          width: 40%;
+        }
+      }
+    }
+
+    @include tabletLandscape {
+      & {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10rem;
+      }
     }
   }
 
@@ -26,6 +62,34 @@
     font-size: 2.25rem;
     @include flex-center;
     text-shadow: 0.2rem 0.2rem 0.5rem $color-dark;
+
+    @include tabletPortrait {
+      & {
+        height: 22rem;
+        font-size: 4rem;
+      }
+    }
+
+    @include tabletLandscape {
+      & {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10rem;
+      }
+    }
+
+    span {
+      // border: 1px solid red;
+
+      @include tabletLandscape {
+        & {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+      }
+    }
 
     &::before {
       content: "";
@@ -50,12 +114,25 @@
       left: 50%;
       @include transformX;
       border-bottom: 0.1rem solid $color-blue;
+
+      @include tabletPortrait {
+        & {
+          width: 64%;
+        }
+      }
+
+      @include tabletLandscape {
+        & {
+          width: 48%;
+          left: 24%;
+        }
+      }
     }
   }
 
   .btn-box {
-    width: 20rem;
-    height: 5rem;
+    width: 100%;
+    height: auto;
     @include flex-center;
 
     .btn-link {
@@ -72,6 +149,21 @@
         border: 0.1rem solid $color-blue;
         text-shadow: 0.1rem 0.1rem 0.3rem #484747;
         box-shadow: 0.2rem 0.2rem 0.5rem $color-dark;
+      }
+
+      @include tabletPortrait {
+        & {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    @include tabletLandscape {
+      & {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10rem;
       }
     }
   }
