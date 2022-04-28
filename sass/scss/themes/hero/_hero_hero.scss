@@ -1,0 +1,26 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  &::before {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background-color: $color-dark;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    @include keep-it-hundo;
+    @include absol-topLeftZero;
+    background-image: url(../public/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+}

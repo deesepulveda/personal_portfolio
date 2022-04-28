@@ -1,0 +1,36 @@
+.burger-box {
+  width: 9rem;
+  height: 5rem;
+  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  filter: drop-shadow(0.1rem 0rem 0.2rem $color-dark);
+  -webkit-filter: drop-shadow(0.1rem 0rem 0.2rem $color-dark);
+
+  .burger-open,
+  .burger-close {
+    object-fit: contain;
+    @include absol-center;
+    @include transit3;
+    cursor: pointer;
+  }
+
+  .burger-open {
+    width: 60%;
+    height: 100%;
+  }
+
+  .burger-close {
+    width: 45%;
+    height: 45%;
+  }
+
+  /* Javascript Click Events */
+
+  .removeBlock {
+    top: -100%;
+  }
+}
