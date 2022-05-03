@@ -1,6 +1,5 @@
 .hero-container {
   @include keep-it-hundo;
-  // max-width: 120rem;
   margin: 0 auto;
   @include flex-center-col;
 
@@ -47,7 +46,7 @@
 
       @include tabletPortrait {
         & {
-          width: 50%;
+          width: 60%;
         }
       }
 
@@ -62,6 +61,12 @@
           width: 30%;
         }
       }
+
+      @include XlargeDesktop {
+        & {
+          width: 20%;
+        }
+      }
     }
 
     @include tabletLandscape {
@@ -74,44 +79,36 @@
   }
 
   .subtitle {
-    width: 100%;
+    width: 90%;
     height: 15rem;
+    margin-top: 2rem;
     position: relative;
-    font-size: 2.25rem;
-    @include flex-center;
+    @include flex-center-col;
     text-shadow: 0.2rem 0.2rem 0.5rem $color-dark;
 
     @include tabletPortrait {
       & {
         height: 22rem;
-        font-size: 4rem;
       }
     }
 
     @include tabletLandscape {
       & {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
       }
     }
 
-    @include desktop {
+    @include largeDesktop {
       & {
-        width: 45%;
-        font-size: 3.5rem;
+        height: 26rem;
       }
     }
 
-    span {
-      // border: 1px solid red;
-
-      @include tabletLandscape {
-        & {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-        }
+    @include XlargeDesktop {
+      & {
+        height: 30rem;
       }
     }
 
@@ -131,7 +128,7 @@
 
     &::after {
       content: "";
-      width: 70%;
+      width: 80%;
       height: 10%;
       position: absolute;
       bottom: 0;
@@ -141,21 +138,59 @@
 
       @include tabletPortrait {
         & {
-          width: 64%;
+          width: 65%;
         }
       }
 
       @include tabletLandscape {
         & {
-          width: 48%;
-          left: 24%;
+          width: 50%;
+          left: 0;
+          transform: translateX(0);
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
         }
       }
 
-      @include desktop {
+      @include largeDesktop {
         & {
-          width: 80%;
-          left: 40%;
+          width: 38%;
+        }
+      }
+
+      @include fullHDDesktop {
+        & {
+          width: 36%;
+        }
+      }
+
+      @include XlargeDesktop {
+        & {
+          width: 24%;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 4.25rem;
+
+      @include tabletPortrait {
+        & {
+          font-size: 7.5rem;
+        }
+      }
+
+      @include largeDesktop {
+        & {
+          font-size: 10rem;
+        }
+      }
+
+      @include XlargeDesktop {
+        & {
+          font-size: 12rem;
         }
       }
     }
@@ -164,13 +199,14 @@
   .btn-box {
     width: 100%;
     height: auto;
+    margin-top: 1rem;
     @include flex-center;
 
     .btn-link {
       color: #fff;
       text-decoration: none;
       font-size: 2.15rem;
-      padding: 0.25rem 3.5rem;
+      padding: 0.5rem 3.5rem;
       border: 0.1rem solid $color-lite;
       @include transit3;
 
@@ -185,6 +221,13 @@
       @include tabletPortrait {
         & {
           font-size: 2.5rem;
+        }
+      }
+
+      @include XlargeDesktop {
+        & {
+          font-size: 3.5rem;
+          padding: 0.5rem 6rem;
         }
       }
     }
