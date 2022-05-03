@@ -1,14 +1,27 @@
 .hero-container {
   @include keep-it-hundo;
-  max-width: 120rem;
+  // max-width: 120rem;
   margin: 0 auto;
   @include flex-center-col;
 
   @include tabletLandscape {
     & {
       height: 90%;
+      margin-left: 8rem;
       justify-content: center;
       align-items: flex-start;
+    }
+  }
+
+  @include largeDesktop {
+    & {
+      margin-left: 12rem;
+    }
+  }
+
+  @include XlargeDesktop {
+    & {
+      margin-left: 15rem;
     }
   }
 
@@ -43,6 +56,12 @@
           width: 40%;
         }
       }
+
+      @include desktop {
+        & {
+          width: 30%;
+        }
+      }
     }
 
     @include tabletLandscape {
@@ -50,7 +69,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 10rem;
       }
     }
   }
@@ -75,7 +93,13 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 10rem;
+      }
+    }
+
+    @include desktop {
+      & {
+        width: 45%;
+        font-size: 3.5rem;
       }
     }
 
@@ -127,6 +151,13 @@
           left: 24%;
         }
       }
+
+      @include desktop {
+        & {
+          width: 80%;
+          left: 40%;
+        }
+      }
     }
   }
 
@@ -163,7 +194,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 10rem;
       }
     }
   }

@@ -17,6 +17,12 @@
     }
   }
 
+  @include desktop {
+    & {
+      display: none;
+    }
+  }
+
   .burger-open,
   .burger-close {
     object-fit: contain;

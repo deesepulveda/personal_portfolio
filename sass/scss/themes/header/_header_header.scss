@@ -4,6 +4,37 @@
   position: relative;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 90;
+  // border: 1px solid red;
+
+  @include desktop {
+    & {
+      width: 25rem;
+      height: 100%;
+
+      &::after {
+        content: "";
+        width: 30%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        @include transformY;
+        border-left: 1px solid $color-lite;
+        z-index: -2;
+      }
+    }
+  }
+
+  @include largeDesktop {
+    & {
+      width: 33rem;
+
+      &::after {
+        content: "";
+        width: 38%;
+      }
+    }
+  }
 }
