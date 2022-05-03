@@ -5,6 +5,7 @@ const burgerClose = document.querySelector(".burger-close");
 const nav = document.querySelector(".nav");
 const navLinks = document.querySelectorAll(".nav-links");
 const hoverLines = document.querySelectorAll(".hoverlines");
+const scrolledNav = document.querySelectorAll(".scroll-nav");
 
 // Open Nav Menu Function
 function openNavMenu() {
@@ -59,6 +60,7 @@ function addHoverLines() {
 
 // Media Query
 
+const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
 
 // Nav Link added to Home Link when in landscape desktop mode
@@ -73,8 +75,37 @@ if (mediaQueryDesktop.matches === true) {
 navLinks.forEach((nl) => {
   nl.addEventListener("click", (e) => {
     resetLinks();
-    resetHoverLines();
+    // resetHoverLines();
     if (e.currentTarget) nl.classList.add("activeLink");
-    console.log("working");
   });
 });
+
+// Scroll Event for Links
+
+if (mediaQueryDesktop.matches === true) {
+  window.addEventListener("scroll", () => {
+    let current = "";
+    scrolledNav.forEach((sn) => {
+      const sectionTop = sn.offsetTop;
+      const sectionHeight = sn.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = sn.getAttribute("id");
+      }
+    });
+    // console.log(current);
+
+    navLinks.forEach((nl) => {
+      if (nl.classList.contains(current)) {
+        resetLinks();
+        nl.classList.add("activeLink");
+      }
+    });
+
+    hoverLines.forEach((hl) => {
+      if (hl.classList.contains(current)) {
+        resetHoverLines();
+        hl.classList.add("activeLines");
+      }
+    });
+  });
+}
