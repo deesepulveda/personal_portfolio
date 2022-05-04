@@ -1,0 +1,40 @@
+.section-title {
+  width: 90%;
+  height: 15rem;
+  margin: 0 auto;
+  overflow: hidden;
+  @include flex-center;
+  // border: 1px solid red;
+
+  p {
+    position: relative;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+
+    &::before {
+      content: "";
+      // width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -55%;
+      background-image: url(../public/images/lines.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+
+    &::after {
+      content: "";
+      // width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -55%;
+      background-image: url(../public/images/lines.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+  }
+}

@@ -130,14 +130,7 @@
 
           @include desktop {
             & {
-              width: 3rem;
-              margin-right: 1rem;
-            }
-          }
-
-          @include largeDesktop {
-            & {
-              width: 4rem;
+              width: 0;
             }
           }
         }
@@ -152,6 +145,12 @@
       .activeLines {
         width: 4rem;
         margin-right: 1rem;
+
+        @include desktop {
+          & {
+            width: 3rem;
+          }
+        }
       }
     }
   }

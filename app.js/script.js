@@ -8,6 +8,7 @@ const hoverLines = document.querySelectorAll(".hoverlines");
 const scrolledNav = document.querySelectorAll(".scroll-nav");
 
 // Open Nav Menu Function
+
 function openNavMenu() {
   nav.classList.add("navOpen");
   burgerClose.classList.remove("removeBlock");
@@ -15,6 +16,7 @@ function openNavMenu() {
 }
 
 // Close Nav Menu Function
+
 function closeNavMenu() {
   nav.classList.remove("navOpen");
   burgerClose.classList.add("removeBlock");
@@ -22,16 +24,19 @@ function closeNavMenu() {
 }
 
 // Click to Open Nav Menu
+
 burgerOpen.addEventListener("click", () => {
   openNavMenu();
 });
 
 // Click to Close Nav Menu
+
 burgerClose.addEventListener("click", () => {
   closeNavMenu();
 });
 
 // Click List/Links to Close Nav Menu
+
 navLinks.forEach((nl) => {
   nl.addEventListener("click", () => {
     closeNavMenu();
@@ -63,24 +68,23 @@ function addHoverLines() {
 const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
 
-// Nav Link added to Home Link when in landscape desktop mode
+// Active added to Home Link when in desktop mode
 
 if (mediaQueryDesktop.matches === true) {
   navLinks[0].classList.add("activeLink");
   hoverLines[0].classList.add("activeLines");
 }
 
-// Click Event for Links
+// Click Event for Links / Links highlight when clicked on
 
 navLinks.forEach((nl) => {
   nl.addEventListener("click", (e) => {
     resetLinks();
-    // resetHoverLines();
     if (e.currentTarget) nl.classList.add("activeLink");
   });
 });
 
-// Scroll Event for Links
+// Scroll Event for Links / Links highlight when scrolled to section
 
 if (mediaQueryDesktop.matches === true) {
   window.addEventListener("scroll", () => {
@@ -92,7 +96,6 @@ if (mediaQueryDesktop.matches === true) {
         current = sn.getAttribute("id");
       }
     });
-    // console.log(current);
 
     navLinks.forEach((nl) => {
       if (nl.classList.contains(current)) {
