@@ -1,9 +1,11 @@
 .section-title {
   width: 90%;
-  height: 15rem;
+  height: 10rem;
   margin: 0 auto;
   overflow: hidden;
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   // border: 1px solid red;
 
   p {

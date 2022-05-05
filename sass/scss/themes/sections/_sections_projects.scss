@@ -1,88 +1,131 @@
 .section-project {
   height: 80rem;
-  border-top: 1px dotted red;
 
   .projects-wrapper {
     width: 100%;
     max-width: 120rem;
-    height: calc(100% - 15rem);
+    height: calc(100% - 10rem);
     margin: 0 auto;
+    position: relative;
     @include flex-center;
 
-    .projects-box {
+    .projects-container {
       width: 15rem;
       height: 50rem;
       position: relative;
-      border: 0.1rem solid $color-lite;
       overflow: hidden;
-      cursor: pointer;
-      @include transit4;
+      // border: 2px dotted red;
 
-      &::after {
-        content: "";
-        width: 100%;
-        height: 35%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        @include transformX;
-        @include transit4;
-        background-image: url(../public/images/ssserpentsandbulliesfinal.png);
-        background-position: top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0.2;
-      }
-
-      &:hover {
-        box-shadow: 0rem 0rem 2rem $color-blue;
-      }
-
-      &:hover::after {
-        opacity: 1;
-      }
-
-      .projects-info {
-        width: 100%;
-        height: 65%;
+      .projects-box {
+        @include keep-it-hundo;
         position: relative;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        // border: 1px solid green;
+        top: 0;
+        background-color: $color-dark;
+        border: 0.1rem solid $color-lite;
+        overflow: hidden;
+        cursor: pointer;
+        @include transit4;
 
-        .projects-info-content {
-          width: 29rem;
-          height: 12rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 35%;
           position: absolute;
-          top: 30%;
-          left: -49%;
-          transform: rotate(-90deg);
-          -webkit-transform: rotate(-90deg);
-          -moz-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          -o-transform: rotate(-90deg);
-          // border: 1px dotted red;
+          top: 0;
+          left: 50%;
+          @include transformX;
+          @include transit4;
+          background-image: url(../public/images/ssserpentsandbulliesfinal.png);
+          background-position: top;
+          background-size: cover;
+          background-repeat: no-repeat;
+          opacity: 0.2;
+        }
 
-          .span-one {
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-            font-family: $secondary-font;
-            letter-spacing: 0.5rem;
-          }
+        &:hover {
+          box-shadow: 0rem 0rem 4rem $color-blue;
+        }
 
-          .span-two {
-            margin-top: 0.5rem;
-            font-size: 5rem;
-            -webkit-text-stroke: 0.15rem $color-lite;
-            -webkit-text-fill-color: transparent;
+        &:hover::before {
+          opacity: 1;
+        }
+
+        .projects-info {
+          width: 100%;
+          height: 65%;
+          position: relative;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: $color-dark;
+
+          .projects-info-content {
+            width: 29rem;
+            height: 12rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: absolute;
+            top: 30%;
+            left: -49%;
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            // border: 1px dotted red;
+
+            .span-one {
+              margin-bottom: 0.5rem;
+              font-size: 2rem;
+              font-family: $secondary-font;
+              letter-spacing: 0.5rem;
+            }
+
+            .span-two {
+              margin-top: 0.5rem;
+              font-size: 5rem;
+              -webkit-text-stroke: 0.15rem $color-lite;
+              -webkit-text-fill-color: transparent;
+            }
           }
         }
       }
+    }
+
+    .prev-slide,
+    .next-slide {
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+      top: 50%;
+      @include transformY;
+      @include transit3;
+      cursor: pointer;
+      background-image: url(../public/images/slider_mini_lines.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .prev-slide {
+      left: 5%;
+      transform: scaleX(-1) translateY(-50%);
+      -webkit-transform: scaleX(-1) translateY(-50%);
+      -moz-transform: scaleX(-1) translateY(-50%);
+      -ms-transform: scaleX(-1) translateY(-50%);
+      -o-transform: scaleX(-1) translateY(-50%);
+    }
+
+    .next-slide {
+      right: 5%;
     }
   }
 }

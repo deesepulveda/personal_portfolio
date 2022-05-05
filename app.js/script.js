@@ -112,3 +112,48 @@ if (mediaQueryDesktop.matches === true) {
     });
   });
 }
+
+// Carousel Slider Function
+
+const projectBoxes = document.querySelectorAll(".projects-box");
+const prevBtn = document.querySelector(".prev-slide");
+const nextBtn = document.querySelector(".next-slide");
+
+// Set Boxes in row, Transform Boxes side by side
+
+projectBoxes.forEach((p, i) => {
+  p.style.transform = `translateX(${100 * i}%)`;
+});
+
+let currentSlide = 0;
+const maxSlide = projectBoxes.length;
+
+// Move Slides 100% left and right Function
+
+const moveSlide = function () {
+  projectBoxes.forEach((p, i) => {
+    p.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
+  });
+};
+
+// Click Event for Next and Prev Buttons
+
+nextBtn.addEventListener("click", () => {
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+
+  moveSlide();
+});
+
+prevBtn.addEventListener("click", () => {
+  if (currentSlide === 0) {
+    currentSlide = 0;
+  } else {
+    currentSlide--;
+  }
+
+  moveSlide();
+});

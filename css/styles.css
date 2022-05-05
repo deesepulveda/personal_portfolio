@@ -453,86 +453,129 @@ body {
   background-color: #050505; }
 
 .section-project {
-  height: 80rem;
-  border-top: 1px dotted red; }
+  height: 80rem; }
   .section-project .projects-wrapper {
     width: 100%;
     max-width: 120rem;
-    height: calc(100% - 15rem);
+    height: calc(100% - 10rem);
     margin: 0 auto;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center; }
-    .section-project .projects-wrapper .projects-box {
+    .section-project .projects-wrapper .projects-container {
       width: 15rem;
       height: 50rem;
       position: relative;
-      border: 0.1rem solid #ffffff;
-      overflow: hidden;
-      cursor: pointer;
-      transition: 0.4s ease;
-      -webkit-transition: 0.4s ease;
-      -moz-transition: 0.4s ease;
-      -ms-transition: 0.4s ease;
-      -o-transition: 0.4s ease; }
-      .section-project .projects-wrapper .projects-box::after {
-        content: "";
+      overflow: hidden; }
+      .section-project .projects-wrapper .projects-container .projects-box {
         width: 100%;
-        height: 35%;
+        height: 100%;
+        position: relative;
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
+        background-color: #050505;
+        border: 0.1rem solid #ffffff;
+        overflow: hidden;
+        cursor: pointer;
         transition: 0.4s ease;
         -webkit-transition: 0.4s ease;
         -moz-transition: 0.4s ease;
         -ms-transition: 0.4s ease;
-        -o-transition: 0.4s ease;
-        background-image: url(../public/images/ssserpentsandbulliesfinal.png);
-        background-position: top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0.2; }
-      .section-project .projects-wrapper .projects-box:hover {
-        box-shadow: 0rem 0rem 2rem #5bc4bf; }
-      .section-project .projects-wrapper .projects-box:hover::after {
-        opacity: 1; }
-      .section-project .projects-wrapper .projects-box .projects-info {
-        width: 100%;
-        height: 65%;
-        position: relative;
-        position: absolute;
-        bottom: 0;
-        left: 0; }
-        .section-project .projects-wrapper .projects-box .projects-info .projects-info-content {
-          width: 29rem;
-          height: 12rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
+        -o-transition: 0.4s ease; }
+        .section-project .projects-wrapper .projects-container .projects-box::before {
+          content: "";
+          width: 100%;
+          height: 35%;
           position: absolute;
-          top: 30%;
-          left: -49%;
-          transform: rotate(-90deg);
-          -webkit-transform: rotate(-90deg);
-          -moz-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          -o-transform: rotate(-90deg); }
-          .section-project .projects-wrapper .projects-box .projects-info .projects-info-content .span-one {
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-            font-family: "GothicRegular", sans-serif;
-            letter-spacing: 0.5rem; }
-          .section-project .projects-wrapper .projects-box .projects-info .projects-info-content .span-two {
-            margin-top: 0.5rem;
-            font-size: 5rem;
-            -webkit-text-stroke: 0.15rem #ffffff;
-            -webkit-text-fill-color: transparent; }
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+          transition: 0.4s ease;
+          -webkit-transition: 0.4s ease;
+          -moz-transition: 0.4s ease;
+          -ms-transition: 0.4s ease;
+          -o-transition: 0.4s ease;
+          background-image: url(../public/images/ssserpentsandbulliesfinal.png);
+          background-position: top;
+          background-size: cover;
+          background-repeat: no-repeat;
+          opacity: 0.2; }
+        .section-project .projects-wrapper .projects-container .projects-box:hover {
+          box-shadow: 0rem 0rem 4rem #5bc4bf; }
+        .section-project .projects-wrapper .projects-container .projects-box:hover::before {
+          opacity: 1; }
+        .section-project .projects-wrapper .projects-container .projects-box .projects-info {
+          width: 100%;
+          height: 65%;
+          position: relative;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #050505; }
+          .section-project .projects-wrapper .projects-container .projects-box .projects-info .projects-info-content {
+            width: 29rem;
+            height: 12rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: absolute;
+            top: 30%;
+            left: -49%;
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg); }
+            .section-project .projects-wrapper .projects-container .projects-box .projects-info .projects-info-content .span-one {
+              margin-bottom: 0.5rem;
+              font-size: 2rem;
+              font-family: "GothicRegular", sans-serif;
+              letter-spacing: 0.5rem; }
+            .section-project .projects-wrapper .projects-container .projects-box .projects-info .projects-info-content .span-two {
+              margin-top: 0.5rem;
+              font-size: 5rem;
+              -webkit-text-stroke: 0.15rem #ffffff;
+              -webkit-text-fill-color: transparent; }
+    .section-project .projects-wrapper .prev-slide,
+    .section-project .projects-wrapper .next-slide {
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transition: 0.3s ease;
+      -webkit-transition: 0.3s ease;
+      -moz-transition: 0.3s ease;
+      -ms-transition: 0.3s ease;
+      -o-transition: 0.3s ease;
+      cursor: pointer;
+      background-image: url(../public/images/slider_mini_lines.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5; }
+      .section-project .projects-wrapper .prev-slide:hover,
+      .section-project .projects-wrapper .next-slide:hover {
+        opacity: 1; }
+    .section-project .projects-wrapper .prev-slide {
+      left: 5%;
+      transform: scaleX(-1) translateY(-50%);
+      -webkit-transform: scaleX(-1) translateY(-50%);
+      -moz-transform: scaleX(-1) translateY(-50%);
+      -ms-transform: scaleX(-1) translateY(-50%);
+      -o-transform: scaleX(-1) translateY(-50%); }
+    .section-project .projects-wrapper .next-slide {
+      right: 5%; }
 
 .section-contact {
   height: 120rem;
@@ -540,12 +583,12 @@ body {
 
 .section-title {
   width: 90%;
-  height: 15rem;
+  height: 10rem;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: flex-end; }
   .section-title p {
     position: relative;
     font-size: 3rem;
