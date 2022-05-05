@@ -450,10 +450,17 @@ body {
 .sections {
   width: 100%;
   height: auto;
-  background-color: #050505; }
+  background-color: #050505;
+  border-top: 0.1rem solid rgba(115, 111, 111, 0.808); }
 
 .section-project {
   height: 80rem; }
+  @media only screen and (min-width: 1224px) {
+    .section-project {
+      height: 95rem; } }
+  @media only screen and (min-width: 1824px) {
+    .section-project {
+      height: 120rem; } }
   .section-project .projects-wrapper {
     width: 100%;
     max-width: 120rem;
@@ -463,11 +470,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media only screen and (min-width: 1224px) {
+      .section-project .projects-wrapper {
+        height: calc(100% - 15rem); } }
     .section-project .projects-wrapper .projects-container {
       width: 15rem;
       height: 50rem;
       position: relative;
       overflow: hidden; }
+      @media only screen and (min-width: 1024px) {
+        .section-project .projects-wrapper .projects-container {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center; } }
       .section-project .projects-wrapper .projects-container .projects-box {
         width: 100%;
         height: 100%;
@@ -483,31 +501,38 @@ body {
         -moz-transition: 0.4s ease;
         -ms-transition: 0.4s ease;
         -o-transition: 0.4s ease; }
-        .section-project .projects-wrapper .projects-container .projects-box::before {
-          content: "";
+        @media only screen and (min-width: 1024px) {
+          .section-project .projects-wrapper .projects-container .projects-box {
+            width: 15rem;
+            height: 50rem;
+            margin: 0 1rem;
+            position: static;
+            position: relative; } }
+        @media only screen and (min-width: 1224px) {
+          .section-project .projects-wrapper .projects-container .projects-box {
+            margin: 0 0.5rem; } }
+        @media only screen and (min-width: 1366px) {
+          .section-project .projects-wrapper .projects-container .projects-box {
+            margin: 0 1.5rem; } }
+        @media only screen and (min-width: 1824px) {
+          .section-project .projects-wrapper .projects-container .projects-box {
+            margin: 0 3rem; } }
+        .section-project .projects-wrapper .projects-container .projects-box .projects-img-box {
           width: 100%;
           height: 35%;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          -webkit-transform: translateX(-50%);
-          -moz-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-          -o-transform: translateX(-50%);
+          opacity: 0.4;
           transition: 0.4s ease;
           -webkit-transition: 0.4s ease;
           -moz-transition: 0.4s ease;
           -ms-transition: 0.4s ease;
-          -o-transition: 0.4s ease;
-          background-image: url(../public/images/ssserpentsandbulliesfinal.png);
-          background-position: top;
-          background-size: cover;
-          background-repeat: no-repeat;
-          opacity: 0.2; }
+          -o-transition: 0.4s ease; }
+          .section-project .projects-wrapper .projects-container .projects-box .projects-img-box .projects-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; }
         .section-project .projects-wrapper .projects-container .projects-box:hover {
           box-shadow: 0rem 0rem 4rem #5bc4bf; }
-        .section-project .projects-wrapper .projects-container .projects-box:hover::before {
+        .section-project .projects-wrapper .projects-container .projects-box:hover > .projects-img-box {
           opacity: 1; }
         .section-project .projects-wrapper .projects-container .projects-box .projects-info {
           width: 100%;
@@ -567,6 +592,10 @@ body {
       .section-project .projects-wrapper .prev-slide:hover,
       .section-project .projects-wrapper .next-slide:hover {
         opacity: 1; }
+      @media only screen and (min-width: 1024px) {
+        .section-project .projects-wrapper .prev-slide,
+        .section-project .projects-wrapper .next-slide {
+          display: none; } }
     .section-project .projects-wrapper .prev-slide {
       left: 5%;
       transform: scaleX(-1) translateY(-50%);
@@ -574,12 +603,17 @@ body {
       -moz-transform: scaleX(-1) translateY(-50%);
       -ms-transform: scaleX(-1) translateY(-50%);
       -o-transform: scaleX(-1) translateY(-50%); }
+      @media only screen and (min-width: 768px) {
+        .section-project .projects-wrapper .prev-slide {
+          left: 25%; } }
     .section-project .projects-wrapper .next-slide {
       right: 5%; }
+      @media only screen and (min-width: 768px) {
+        .section-project .projects-wrapper .next-slide {
+          right: 25%; } }
 
 .section-contact {
-  height: 120rem;
-  border-top: 1px dotted red; }
+  height: 80rem; }
 
 .section-title {
   width: 90%;
@@ -589,27 +623,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end; }
+  @media only screen and (min-width: 1224px) {
+    .section-title {
+      height: 15rem; } }
   .section-title p {
     position: relative;
     font-size: 3rem;
     letter-spacing: 0.5rem; }
+    @media only screen and (min-width: 768px) {
+      .section-title p {
+        font-size: 4rem; } }
+    @media only screen and (min-width: 1224px) {
+      .section-title p {
+        font-size: 5rem; } }
     .section-title p::before {
       content: "";
       height: 100%;
       position: absolute;
-      top: 0;
+      top: 20%;
       left: -55%;
       background-image: url(../public/images/lines.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: top; }
+      @media only screen and (min-width: 768px) {
+        .section-title p::before {
+          width: 50%; } }
     .section-title p::after {
       content: "";
       height: 100%;
       position: absolute;
-      top: 0;
-      right: -55%;
+      top: -15%;
+      right: -53%;
       background-image: url(../public/images/lines.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: bottom; }
+      @media only screen and (min-width: 768px) {
+        .section-title p::after {
+          width: 50%; } }

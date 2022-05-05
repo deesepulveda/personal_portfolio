@@ -8,22 +8,46 @@
   align-items: flex-end;
   // border: 1px solid red;
 
+  @include desktop {
+    & {
+      height: 15rem;
+    }
+  }
+
   p {
     position: relative;
     font-size: 3rem;
     letter-spacing: 0.5rem;
+
+    @include tabletPortrait {
+      & {
+        font-size: 4rem;
+      }
+    }
+
+    @include desktop {
+      & {
+        font-size: 5rem;
+      }
+    }
 
     &::before {
       content: "";
       // width: 50%;
       height: 100%;
       position: absolute;
-      top: 0;
+      top: 20%;
       left: -55%;
       background-image: url(../public/images/lines.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: top;
+
+      @include tabletPortrait {
+        & {
+          width: 50%;
+        }
+      }
     }
 
     &::after {
@@ -31,12 +55,18 @@
       // width: 50%;
       height: 100%;
       position: absolute;
-      top: 0;
-      right: -55%;
+      top: -15%;
+      right: -53%;
       background-image: url(../public/images/lines.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: bottom;
+
+      @include tabletPortrait {
+        & {
+          width: 50%;
+        }
+      }
     }
   }
 }

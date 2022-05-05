@@ -66,6 +66,7 @@ function addHoverLines() {
 // Media Query
 
 const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
+const mediaQueryTabletLandscape = window.matchMedia("(max-width: 1024px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
 
 // Active added to Home Link when in desktop mode
@@ -121,9 +122,11 @@ const nextBtn = document.querySelector(".next-slide");
 
 // Set Boxes in row, Transform Boxes side by side
 
-projectBoxes.forEach((p, i) => {
-  p.style.transform = `translateX(${100 * i}%)`;
-});
+if (mediaQueryMobile.matches === true && mediaQueryTabletLandscape === true) {
+  projectBoxes.forEach((p, i) => {
+    p.style.transform = `translateX(${100 * i}%)`;
+  });
+}
 
 let currentSlide = 0;
 const maxSlide = projectBoxes.length;
