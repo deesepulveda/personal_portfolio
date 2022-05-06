@@ -52,12 +52,31 @@
         cursor: pointer;
         @include transit4;
 
+        &:nth-of-type(1) {
+          animation-delay: 300ms;
+        }
+
+        &:nth-of-type(2) {
+          animation-delay: 600ms;
+        }
+
+        &:nth-of-type(3) {
+          animation-delay: 900ms;
+        }
+
+        &:nth-of-type(4) {
+          animation-delay: 1200ms;
+        }
+
+        &:nth-of-type(5) {
+          animation-delay: 1500ms;
+        }
+
         @include tabletLandscape {
           & {
             width: 15rem;
             height: 50rem;
             margin: 0 1rem;
-            position: static;
             position: relative;
           }
         }
@@ -80,30 +99,11 @@
           }
         }
 
-        &:nth-of-type(1) {
-          animation-delay: 300ms;
-        }
-
-        &:nth-of-type(2) {
-          animation-delay: 600ms;
-        }
-
-        &:nth-of-type(3) {
-          animation-delay: 900ms;
-        }
-
-        &:nth-of-type(4) {
-          animation-delay: 1200ms;
-        }
-
-        &:nth-of-type(5) {
-          animation-delay: 1500ms;
-        }
-
         .projects-img-box {
           width: 100%;
           height: 35%;
           opacity: 0.4;
+          position: relative;
           @include transit4;
 
           .projects-img {
