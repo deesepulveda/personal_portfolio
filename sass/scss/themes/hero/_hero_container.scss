@@ -2,6 +2,7 @@
   @include keep-it-hundo;
   margin: 0 auto;
   @include flex-center-col;
+  @include transit3;
 
   @include tabletLandscape {
     & {
@@ -28,6 +29,7 @@
   .subtitle {
     margin-bottom: 4rem;
     font-family: "GothicBold", sans-serif;
+    @include transit3;
 
     @include tabletPortrait {
       & {
@@ -154,6 +156,12 @@
         }
       }
 
+      @include desktop {
+        & {
+          width: 42%;
+        }
+      }
+
       @include largeDesktop {
         & {
           width: 38%;
@@ -201,6 +209,7 @@
     height: auto;
     margin-top: 1rem;
     @include flex-center;
+    @include transit3;
 
     .btn-link {
       color: #fff;
@@ -240,4 +249,8 @@
       }
     }
   }
+}
+
+.fadeOut {
+  opacity: 0;
 }

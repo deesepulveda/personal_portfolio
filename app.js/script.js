@@ -1,11 +1,57 @@
 "use strict";
 
+// DOM Select Variables
+
 const burgerOpen = document.querySelector(".burger-open");
 const burgerClose = document.querySelector(".burger-close");
 const nav = document.querySelector(".nav");
 const navLinks = document.querySelectorAll(".nav-links");
 const hoverLines = document.querySelectorAll(".hoverlines");
 const scrolledNav = document.querySelectorAll(".scroll-nav");
+const sectionTitles = document.querySelectorAll(".section-title");
+const projectBoxes = document.querySelectorAll(".projects-box");
+const projectContainer = document.querySelector(".projects-container");
+
+// Media Query
+
+const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
+const mediaQueryTabletLandscapeMin = window.matchMedia("(min-width: 1024px)");
+const mediaQueryTabletLandscape = window.matchMedia("(max-width: 1024px)");
+const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
+
+// Intersection Observer for Section Titles
+
+const sectionObserverFunction = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (entry.isIntersecting) entry.target.classList.toggle("galleryAnimateIn");
+
+  if (entry.isIntersecting && projectContainer.clientWidth > 150) {
+    projectBoxes.forEach((pb) => {
+      pb.classList.toggle("galleryAnimateIn");
+    });
+  }
+
+  // Stop Observer after Intersecting
+
+  if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
+};
+
+const sectionObserverOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+const sectionObserver = new IntersectionObserver(
+  sectionObserverFunction,
+  sectionObserverOptions
+);
+
+sectionTitles.forEach((st) => {
+  sectionObserver.observe(st);
+});
 
 // Open Nav Menu Function
 
@@ -63,11 +109,31 @@ function addHoverLines() {
   });
 }
 
-// Media Query
+// Parallax Effect in Hero Section
 
-const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
-const mediaQueryTabletLandscape = window.matchMedia("(max-width: 1024px)");
-const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
+const heroContainer = document.querySelector(".hero-container");
+const nameTitle = document.querySelector(".title");
+const nameSubtitle = document.querySelector(".subtitle");
+const btnBox = document.querySelector(".btn-box");
+
+window.addEventListener("scroll", () => {
+  let rate = window.pageYOffset;
+  let speed = rate * 0.3 + "px";
+  let speedFast = rate * 0.5 + "px";
+  // let speedFaster = rate * 0.8 + "px";
+
+  // Parallax Effect when scrolling
+
+  nameTitle.style.transform = `translateX(${speed})`;
+  nameSubtitle.style.transform = `translateX(-${speed})`;
+  btnBox.style.transform = `translateY(${speedFast})`;
+
+  // Fade Out when scrolling
+
+  nameTitle.classList.toggle("fadeOut", window.scrollY > 150);
+  nameSubtitle.classList.toggle("fadeOut", window.scrollY > 150);
+  btnBox.classList.toggle("fadeOut", window.scrollY > 250);
+});
 
 // Active added to Home Link when in desktop mode
 
@@ -116,7 +182,6 @@ if (mediaQueryDesktop.matches === true) {
 
 // Carousel Slider Function
 
-const projectBoxes = document.querySelectorAll(".projects-box");
 const prevBtn = document.querySelector(".prev-slide");
 const nextBtn = document.querySelector(".next-slide");
 
