@@ -1,5 +1,6 @@
 .section-project {
   height: 80rem;
+  position: relative;
 
   @include desktop {
     & {
@@ -214,5 +215,98 @@
         }
       }
     }
+  }
+
+  .projects-modal-container {
+    @include keep-it-hundo;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    @include transit4;
+    z-index: 100;
+
+    &::after {
+      content: "";
+      @include keep-it-hundo;
+      @include absol-topLeftZero;
+      background-color: $color-dark;
+      opacity: 0.9;
+    }
+
+    .modal-close-box {
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      top: 2%;
+      right: 5%;
+      font-size: 2rem;
+      border: 1px solid white;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .modal-content-container {
+      width: 90%;
+      height: 80%;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      @include transformX;
+      // border: 0.1rem solid $color-lite;
+      z-index: 1;
+
+      .modal-content-info {
+        @include keep-it-hundo;
+        border: 1px solid green;
+
+        .modal-content-title-box {
+          width: 100%;
+          @include flex-center-col;
+          // border: 1px solid red;
+
+          .modal-project {
+            width: 80%;
+            height: auto;
+            margin: 1rem auto;
+            position: relative;
+            font-size: 2.75rem;
+            color: $color-gray-lite;
+            text-align: start;
+
+            &::after {
+              content: "";
+              width: 50%;
+              height: 80%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              @include transformY;
+              background-image: url(../public/images/lines.png);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+
+          .modal-project-name {
+            width: 100%;
+            height: auto;
+            font-size: 5.5rem;
+          }
+        }
+      }
+
+      .modal-content-image {
+        display: none;
+      }
+    }
+  }
+
+  .closeModal {
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
 }

@@ -475,7 +475,8 @@ body {
   border-top: 0.1rem solid rgba(115, 111, 111, 0.808); }
 
 .section-project {
-  height: 80rem; }
+  height: 80rem;
+  position: relative; }
   @media only screen and (min-width: 1224px) {
     .section-project {
       height: 95rem; } }
@@ -642,6 +643,95 @@ body {
       @media only screen and (min-width: 768px) {
         .section-project .projects-wrapper .next-slide {
           right: 25%; } }
+  .section-project .projects-modal-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    z-index: 100; }
+    .section-project .projects-modal-container::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #050505;
+      opacity: 0.9; }
+    .section-project .projects-modal-container .modal-close-box {
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      top: 2%;
+      right: 5%;
+      font-size: 2rem;
+      border: 1px solid white;
+      cursor: pointer;
+      z-index: 100; }
+    .section-project .projects-modal-container .modal-content-container {
+      width: 90%;
+      height: 80%;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      z-index: 1; }
+      .section-project .projects-modal-container .modal-content-container .modal-content-info {
+        width: 100%;
+        height: 100%;
+        border: 1px solid green; }
+        .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+          .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project {
+            width: 80%;
+            height: auto;
+            margin: 1rem auto;
+            position: relative;
+            font-size: 2.75rem;
+            color: rgba(115, 111, 111, 0.808);
+            text-align: start; }
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project::after {
+              content: "";
+              width: 50%;
+              height: 80%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              background-image: url(../public/images/lines.png);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain; }
+          .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project-name {
+            width: 100%;
+            height: auto;
+            font-size: 5.5rem; }
+      .section-project .projects-modal-container .modal-content-container .modal-content-image {
+        display: none; }
+  .section-project .closeModal {
+    width: 0;
+    height: 0;
+    opacity: 0; }
 
 .section-contact {
   height: 80rem; }

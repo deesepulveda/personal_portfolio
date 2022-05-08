@@ -187,18 +187,14 @@ const nextBtn = document.querySelector(".next-slide");
 
 // Set Boxes in row, Transform Boxes side by side
 
-// projectBoxes.forEach((p, i) => {
-//   p.style.transform = `translateX(${100 * i}%)`;
-// });
-
 projectBoxes.forEach((p, i) => {
   if (projectContainer.clientWidth <= 150) {
     p.style.transform = `translateX(${100 * i}%)`;
   }
-  if (projectContainer.clientWidth > projectBoxes.clientWidth) {
-    console.log(p.clientWidth);
-    p.style.transform = "none";
-  }
+  // if (projectContainer.clientWidth > p.clientWidth) {
+  //   // p.style.transform = "none";
+  //   console.log(p.clientWidth);
+  // }
 });
 
 let currentSlide = 0;
@@ -232,4 +228,24 @@ prevBtn.addEventListener("click", () => {
   }
 
   moveSlide();
+});
+
+const modalContainer = document.querySelector(".projects-modal-container");
+const modalClose = document.querySelector(".modal-close-box");
+const modalProjectName = document.querySelector(".modal-project-name");
+
+// Open Modal after Project Boxes are clicked
+
+projectBoxes.forEach((p) => {
+  p.addEventListener("click", () => {
+    modalContainer.classList.remove("closeModal");
+    if (!modalContainer.classList.contains("closeModal")) {
+    }
+  });
+});
+
+// Close Modal after Close Box is clicked
+
+modalClose.addEventListener("click", () => {
+  modalContainer.classList.add("closeModal");
 });
