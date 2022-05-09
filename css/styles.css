@@ -693,7 +693,7 @@ body {
       width: 90%;
       height: 80%;
       position: absolute;
-      bottom: 5%;
+      bottom: 10%;
       left: 50%;
       transform: translateX(-50%);
       -webkit-transform: translateX(-50%);
@@ -704,16 +704,14 @@ body {
       justify-content: center;
       align-items: center;
       z-index: 1; }
-      @media only screen and (min-width: 768px) {
-        .section-project .projects-modal-container .modal-content-container {
-          bottom: 10%; } }
       .section-project .projects-modal-container .modal-content-container .modal-content-info {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; }
+        flex-direction: column;
+        overflow: hidden; }
         .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box {
           width: 100%;
           height: 30%;
@@ -759,7 +757,7 @@ body {
                 font-size: 6.5rem; } }
             @media only screen and (min-width: 1024px) {
               .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project-name {
-                font-size: 8rem; } }
+                font-size: 7rem; } }
         .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info {
           width: 100%;
           height: 70%;
@@ -795,24 +793,26 @@ body {
                 -o-transition: 0.3s ease; }
                 .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li a:hover {
                   color: #5bc4bf; }
-      .section-project .projects-modal-container .modal-content-container .modal-content-image {
+      .section-project .projects-modal-container .modal-content-container .modal-content-image-container {
         display: none; }
-        .section-project .projects-modal-container .modal-content-container .modal-content-image .modal-content-image-box {
-          width: 90%;
-          height: 100%;
-          border: 1px solid #ffffff; }
-          .section-project .projects-modal-container .modal-content-container .modal-content-image .modal-content-image-box .modal-content-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; }
         @media only screen and (min-width: 1024px) {
-          .section-project .projects-modal-container .modal-content-container .modal-content-image {
+          .section-project .projects-modal-container .modal-content-container .modal-content-image-container {
             display: block;
             width: 100%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center; } }
+        .section-project .projects-modal-container .modal-content-container .modal-content-image-container .modal-content-image-box {
+          width: 90%;
+          height: 100%;
+          overflow: hidden;
+          border: 1px solid #ffffff;
+          z-index: 100; }
+          .section-project .projects-modal-container .modal-content-container .modal-content-image-container .modal-content-image-box .modal-content-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; }
   .section-project .closeModal {
     width: 0;
     height: 100%;

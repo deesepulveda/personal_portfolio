@@ -237,11 +237,13 @@ const modalProjectName = document.querySelector(".modal-project-name");
 const modalTitleBox = document.querySelector(".modal-content-title-box");
 const modalProjectInfo = document.querySelector(".modal-project-info");
 const modalContentImageBox = document.querySelector(".modal-content-image-box");
+const modalContentImage = document.querySelector(".modal-content-image");
+const projectsImages = document.querySelectorAll(".projects-img");
 
 // Open Modal after Project Boxes are clicked
 
 projectBoxes.forEach((p) => {
-  p.addEventListener("click", () => {
+  p.addEventListener("click", (e) => {
     modalContainer.classList.remove("closeModal");
     if (!modalContainer.classList.contains("closeModal")) {
       modalContainer.classList.add("galleryFromLeft");
@@ -254,8 +256,9 @@ projectBoxes.forEach((p) => {
     ) {
       modalContainer.classList.add("galleryFromLeft");
       modalContainer.classList.remove("galleryBackLeft");
-
-      console.log("it works here too");
+      const currentModalImages =
+        e.currentTarget.firstElementChild.firstElementChild.src;
+      modalContentImage.src = currentModalImages;
     }
   });
 });

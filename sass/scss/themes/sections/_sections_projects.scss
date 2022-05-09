@@ -261,21 +261,16 @@
       width: 90%;
       height: 80%;
       position: absolute;
-      bottom: 5%;
+      bottom: 10%;
       left: 50%;
       @include transformX;
       @include flex-center;
       z-index: 1;
 
-      @include tabletPortrait {
-        & {
-          bottom: 10%;
-        }
-      }
-
       .modal-content-info {
         @include keep-it-hundo;
         @include flex-center-col;
+        overflow: hidden;
 
         .modal-content-title-box {
           width: 100%;
@@ -338,7 +333,7 @@
 
             @include tabletLandscape {
               & {
-                font-size: 8rem;
+                font-size: 7rem;
               }
             }
           }
@@ -392,25 +387,27 @@
         }
       }
 
-      .modal-content-image {
+      .modal-content-image-container {
         display: none;
-
-        .modal-content-image-box {
-          width: 90%;
-          height: 100%;
-          border: 1px solid $color-lite;
-
-          .modal-content-image {
-            @include keep-it-hundo;
-            object-fit: cover;
-          }
-        }
 
         @include tabletLandscape {
           & {
             display: block;
             @include keep-it-hundo;
             @include flex-center;
+          }
+        }
+
+        .modal-content-image-box {
+          width: 90%;
+          height: 100%;
+          overflow: hidden;
+          border: 1px solid $color-lite;
+          z-index: 100;
+
+          .modal-content-image {
+            @include keep-it-hundo;
+            object-fit: contain;
           }
         }
       }
