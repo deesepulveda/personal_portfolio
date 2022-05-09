@@ -651,19 +651,24 @@ body {
     top: 0;
     left: 0;
     opacity: 1;
-    transition: 0.4s ease;
-    -webkit-transition: 0.4s ease;
-    -moz-transition: 0.4s ease;
-    -ms-transition: 0.4s ease;
-    -o-transition: 0.4s ease;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
     z-index: 100; }
     .section-project .projects-modal-container::after {
       content: "";
-      width: 100%;
-      height: 100%;
+      width: 200%;
+      height: 200%;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
       background-color: #050505;
       opacity: 0.9; }
     .section-project .projects-modal-container .modal-close-box {
@@ -672,10 +677,18 @@ body {
       position: absolute;
       top: 2%;
       right: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 2rem;
       border: 1px solid white;
       cursor: pointer;
       z-index: 100; }
+      @media only screen and (min-width: 1024px) {
+        .section-project .projects-modal-container .modal-close-box {
+          width: 4rem;
+          height: 4rem;
+          right: 2%; } }
     .section-project .projects-modal-container .modal-content-container {
       width: 90%;
       height: 80%;
@@ -687,51 +700,170 @@ body {
       -moz-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       z-index: 1; }
+      @media only screen and (min-width: 768px) {
+        .section-project .projects-modal-container .modal-content-container {
+          bottom: 10%; } }
       .section-project .projects-modal-container .modal-content-container .modal-content-info {
         width: 100%;
         height: 100%;
-        border: 1px solid green; }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
         .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box {
           width: 100%;
+          height: 30%;
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column; }
+          @media only screen and (min-width: 768px) {
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box {
+              width: 70%; } }
+          @media only screen and (min-width: 1024px) {
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box {
+              width: 90%; } }
           .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project {
-            width: 80%;
+            width: 100%;
             height: auto;
             margin: 1rem auto;
             position: relative;
             font-size: 2.75rem;
             color: rgba(115, 111, 111, 0.808);
-            text-align: start; }
-            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project::after {
-              content: "";
-              width: 50%;
-              height: 80%;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translateY(-50%);
-              -webkit-transform: translateY(-50%);
-              -moz-transform: translateY(-50%);
-              -ms-transform: translateY(-50%);
-              -o-transform: translateY(-50%);
-              background-image: url(../public/images/lines.png);
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: contain; }
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            @media only screen and (min-width: 768px) {
+              .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project {
+                font-size: 3.5rem;
+                justify-content: flex-start; } }
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project img {
+              width: 40%;
+              height: 100%;
+              object-fit: contain;
+              margin-left: 1rem; }
+              @media only screen and (min-width: 768px) {
+                .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project img {
+                  width: 30%; } }
           .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project-name {
             width: 100%;
             height: auto;
             font-size: 5.5rem; }
+            @media only screen and (min-width: 768px) {
+              .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project-name {
+                text-align: start;
+                font-size: 6.5rem; } }
+            @media only screen and (min-width: 1024px) {
+              .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-content-title-box .modal-project-name {
+                font-size: 8rem; } }
+        .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info {
+          width: 100%;
+          height: 70%;
+          border: 1px solid #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media only screen and (min-width: 768px) {
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info {
+              width: 70%; } }
+          @media only screen and (min-width: 1024px) {
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info {
+              width: 90%; } }
+          .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul {
+            width: 90%;
+            height: 90%; }
+            .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li {
+              margin: 2rem 0 0 1rem;
+              text-align: start;
+              list-style-type: none;
+              font-size: 1.75rem;
+              font-family: "Bahnscrift", sans-serif; }
+              .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li span {
+                font-size: 2.5rem;
+                color: rgba(115, 111, 111, 0.808); }
+              .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li a {
+                text-decoration: none;
+                color: #ffffff;
+                transition: 0.3s ease;
+                -webkit-transition: 0.3s ease;
+                -moz-transition: 0.3s ease;
+                -ms-transition: 0.3s ease;
+                -o-transition: 0.3s ease; }
+                .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li a:hover {
+                  color: #5bc4bf; }
       .section-project .projects-modal-container .modal-content-container .modal-content-image {
         display: none; }
+        .section-project .projects-modal-container .modal-content-container .modal-content-image .modal-content-image-box {
+          width: 90%;
+          height: 100%;
+          border: 1px solid #ffffff; }
+          .section-project .projects-modal-container .modal-content-container .modal-content-image .modal-content-image-box .modal-content-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+        @media only screen and (min-width: 1024px) {
+          .section-project .projects-modal-container .modal-content-container .modal-content-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; } }
   .section-project .closeModal {
     width: 0;
-    height: 0;
+    height: 100%;
     opacity: 0; }
+
+.galleryFromLeft {
+  animation: galleryAnimationRight 1000ms ease-out 0.3s both;
+  -webkit-animation: galleryAnimationRight 1000ms ease-out 0.3s both; }
+
+.galleryBackLeft {
+  animation: galleryAnimationLeft 100ms ease-out both;
+  -webkit-animation: galleryAnimationLeft 100ms ease-out both; }
+
+@keyframes galleryAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%); }
+  50% {
+    opacity: 1;
+    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0); } }
+
+@keyframes galleryAnimationLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%); } }
 
 .section-contact {
   height: 80rem; }

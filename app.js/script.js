@@ -205,6 +205,7 @@ const maxSlide = projectBoxes.length;
 const moveSlide = function () {
   projectBoxes.forEach((p, i) => {
     p.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
+    console.log(100 * (i - currentSlide));
   });
 };
 
@@ -233,6 +234,9 @@ prevBtn.addEventListener("click", () => {
 const modalContainer = document.querySelector(".projects-modal-container");
 const modalClose = document.querySelector(".modal-close-box");
 const modalProjectName = document.querySelector(".modal-project-name");
+const modalTitleBox = document.querySelector(".modal-content-title-box");
+const modalProjectInfo = document.querySelector(".modal-project-info");
+const modalContentImageBox = document.querySelector(".modal-content-image-box");
 
 // Open Modal after Project Boxes are clicked
 
@@ -240,6 +244,18 @@ projectBoxes.forEach((p) => {
   p.addEventListener("click", () => {
     modalContainer.classList.remove("closeModal");
     if (!modalContainer.classList.contains("closeModal")) {
+      modalContainer.classList.add("galleryFromLeft");
+      modalContainer.classList.remove("galleryBackLeft");
+    }
+
+    if (
+      !modalContainer.classList.contains("closeModal") &&
+      mediaQueryTabletLandscapeMin.matches === true
+    ) {
+      modalContainer.classList.add("galleryFromLeft");
+      modalContainer.classList.remove("galleryBackLeft");
+
+      console.log("it works here too");
     }
   });
 });
@@ -247,5 +263,7 @@ projectBoxes.forEach((p) => {
 // Close Modal after Close Box is clicked
 
 modalClose.addEventListener("click", () => {
+  modalContainer.classList.remove("galleryFromLeft");
+  modalContainer.classList.add("galleryBackLeft");
   modalContainer.classList.add("closeModal");
 });

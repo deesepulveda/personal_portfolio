@@ -224,13 +224,14 @@
     top: 0;
     left: 0;
     opacity: 1;
-    @include transit4;
+    @include transit3;
     z-index: 100;
 
     &::after {
       content: "";
-      @include keep-it-hundo;
-      @include absol-topLeftZero;
+      width: 200%;
+      height: 200%;
+      @include absol-center;
       background-color: $color-dark;
       opacity: 0.9;
     }
@@ -241,10 +242,19 @@
       position: absolute;
       top: 2%;
       right: 5%;
+      @include flex-center;
       font-size: 2rem;
       border: 1px solid white;
       cursor: pointer;
       z-index: 100;
+
+      @include tabletLandscape {
+        & {
+          width: 4rem;
+          height: 4rem;
+          right: 2%;
+        }
+      }
     }
 
     .modal-content-container {
@@ -254,39 +264,63 @@
       bottom: 5%;
       left: 50%;
       @include transformX;
-      // border: 0.1rem solid $color-lite;
+      @include flex-center;
       z-index: 1;
+
+      @include tabletPortrait {
+        & {
+          bottom: 10%;
+        }
+      }
 
       .modal-content-info {
         @include keep-it-hundo;
-        border: 1px solid green;
+        @include flex-center-col;
 
         .modal-content-title-box {
           width: 100%;
+          height: 30%;
           @include flex-center-col;
-          // border: 1px solid red;
+
+          @include tabletPortrait {
+            & {
+              width: 70%;
+            }
+          }
+
+          @include tabletLandscape {
+            & {
+              width: 90%;
+            }
+          }
 
           .modal-project {
-            width: 80%;
+            width: 100%;
             height: auto;
             margin: 1rem auto;
             position: relative;
             font-size: 2.75rem;
             color: $color-gray-lite;
-            text-align: start;
+            @include flex-center;
 
-            &::after {
-              content: "";
-              width: 50%;
-              height: 80%;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              @include transformY;
-              background-image: url(../public/images/lines.png);
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: contain;
+            @include tabletPortrait {
+              & {
+                font-size: 3.5rem;
+                justify-content: flex-start;
+              }
+            }
+
+            img {
+              width: 40%;
+              height: 100%;
+              object-fit: contain;
+              margin-left: 1rem;
+
+              @include tabletPortrait {
+                & {
+                  width: 30%;
+                }
+              }
             }
           }
 
@@ -294,19 +328,161 @@
             width: 100%;
             height: auto;
             font-size: 5.5rem;
+
+            @include tabletPortrait {
+              & {
+                text-align: start;
+                font-size: 6.5rem;
+              }
+            }
+
+            @include tabletLandscape {
+              & {
+                font-size: 8rem;
+              }
+            }
+          }
+        }
+
+        .modal-project-info {
+          width: 100%;
+          height: 70%;
+          border: 1px solid $color-lite;
+          @include flex-center;
+
+          @include tabletPortrait {
+            & {
+              width: 70%;
+            }
+          }
+
+          @include tabletLandscape {
+            & {
+              width: 90%;
+            }
+          }
+
+          .modal-project-info-ul {
+            width: 90%;
+            height: 90%;
+
+            .modal-project-info-li {
+              margin: 2rem 0 0 1rem;
+              text-align: start;
+              list-style-type: none;
+              font-size: 1.75rem;
+              font-family: $tertiary-font;
+
+              span {
+                font-size: 2.5rem;
+                color: $color-gray-lite;
+              }
+
+              a {
+                text-decoration: none;
+                color: $color-lite;
+                @include transit3;
+
+                &:hover {
+                  color: $color-blue;
+                }
+              }
+            }
           }
         }
       }
 
       .modal-content-image {
         display: none;
+
+        .modal-content-image-box {
+          width: 90%;
+          height: 100%;
+          border: 1px solid $color-lite;
+
+          .modal-content-image {
+            @include keep-it-hundo;
+            object-fit: cover;
+          }
+        }
+
+        @include tabletLandscape {
+          & {
+            display: block;
+            @include keep-it-hundo;
+            @include flex-center;
+          }
+        }
       }
     }
   }
 
   .closeModal {
     width: 0;
-    height: 0;
+    height: 100%;
     opacity: 0;
+  }
+}
+
+// Animation Class
+
+.galleryFromLeft {
+  animation: galleryAnimationRight 1000ms ease-out 0.3s both;
+  -webkit-animation: galleryAnimationRight 1000ms ease-out 0.3s both;
+}
+
+.galleryBackLeft {
+  animation: galleryAnimationLeft 100ms ease-out both;
+  -webkit-animation: galleryAnimationLeft 100ms ease-out both;
+}
+
+// Keyframes for Animations
+
+@keyframes galleryAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes galleryAnimationLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
   }
 }
