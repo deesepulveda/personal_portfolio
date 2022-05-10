@@ -205,7 +205,6 @@ const maxSlide = projectBoxes.length;
 const moveSlide = function () {
   projectBoxes.forEach((p, i) => {
     p.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
-    console.log(100 * (i - currentSlide));
   });
 };
 
@@ -234,13 +233,11 @@ prevBtn.addEventListener("click", () => {
 const modalContainer = document.querySelector(".projects-modal-container");
 const modalClose = document.querySelector(".modal-close-box");
 const modalProjectName = document.querySelector(".modal-project-name");
-const modalTitleBox = document.querySelector(".modal-content-title-box");
-const modalProjectInfo = document.querySelector(".modal-project-info");
-const modalContentImageBox = document.querySelector(".modal-content-image-box");
 const modalContentImage = document.querySelector(".modal-content-image");
-const projectsImages = document.querySelectorAll(".projects-img");
+const siteLink = document.querySelector(".site-link");
+const actualSiteLink = document.querySelector(".actual-site-link");
 
-// Open Modal after Project Boxes are clicked
+// Open Modal after Project Boxes are Clicked
 
 projectBoxes.forEach((p) => {
   p.addEventListener("click", (e) => {
@@ -248,7 +245,38 @@ projectBoxes.forEach((p) => {
     if (!modalContainer.classList.contains("closeModal")) {
       modalContainer.classList.add("galleryFromLeft");
       modalContainer.classList.remove("galleryBackLeft");
+
+      // Setting Title Name in Modal
+
+      const nameTitleText =
+        e.currentTarget.lastElementChild.lastElementChild.lastElementChild
+          .textContent;
+
+      // Remove All White Spaces in String
+
+      const newNameTitleText = nameTitleText.replace(/\s/g, "");
+
+      // Dynamically Setting Modal Name to Current Target
+
+      modalProjectName.textContent = nameTitleText;
+
+      // Dynamically Setting Modal Actual Website Links to Current Target
+
+      if (e.currentTarget.classList.contains("has-website")) {
+        actualSiteLink.lastElementChild.href = `https://www.${newNameTitleText}.com`;
+        actualSiteLink.lastElementChild.textContent = `https://www.${newNameTitleText}.com`;
+      } else {
+        actualSiteLink.lastElementChild.href = "";
+        actualSiteLink.lastElementChild.textContent = "";
+      }
+
+      // Dynamically Setting Modal Links to Current Target
+
+      siteLink.lastElementChild.href = `https://deesepulveda.github.io/${newNameTitleText}/`;
+      siteLink.lastElementChild.textContent = `https://deesepulveda.github.io/${newNameTitleText}/`;
     }
+
+    // Additional Conditions When in Landscape Mode
 
     if (
       !modalContainer.classList.contains("closeModal") &&
@@ -256,6 +284,9 @@ projectBoxes.forEach((p) => {
     ) {
       modalContainer.classList.add("galleryFromLeft");
       modalContainer.classList.remove("galleryBackLeft");
+
+      // Setting Image in Modal
+
       const currentModalImages =
         e.currentTarget.firstElementChild.firstElementChild.src;
       modalContentImage.src = currentModalImages;
@@ -263,7 +294,7 @@ projectBoxes.forEach((p) => {
   });
 });
 
-// Close Modal after Close Box is clicked
+// Close Modal after Close Box has been Clicked
 
 modalClose.addEventListener("click", () => {
   modalContainer.classList.remove("galleryFromLeft");
