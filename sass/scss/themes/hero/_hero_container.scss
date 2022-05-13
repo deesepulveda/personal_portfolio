@@ -26,10 +26,16 @@
   }
 
   .title,
+  .subtitle,
+  .btn-box {
+    opacity: 0;
+    @include transit6;
+  }
+
+  .title,
   .subtitle {
     margin-bottom: 4rem;
     font-family: "GothicBold", sans-serif;
-    @include transit3;
 
     @include tabletPortrait {
       & {
@@ -40,6 +46,7 @@
 
   .title {
     width: 100%;
+    animation-delay: 100ms;
 
     .title-img {
       width: 80%;
@@ -86,6 +93,7 @@
     margin-top: 2rem;
     position: relative;
     @include flex-center-col;
+    animation-delay: 500ms;
     text-shadow: 0.2rem 0.2rem 0.5rem $color-dark;
 
     @include tabletPortrait {
@@ -209,7 +217,7 @@
     height: auto;
     margin-top: 1rem;
     @include flex-center;
-    @include transit3;
+    animation-delay: 900ms;
 
     .btn-link {
       color: #fff;
@@ -217,7 +225,7 @@
       font-size: 2.15rem;
       padding: 0.5rem 3.5rem;
       border: 0.1rem solid $color-lite;
-      @include transit3;
+      @include transit4;
 
       &:hover {
         color: $color-dark;
@@ -249,6 +257,10 @@
       }
     }
   }
+}
+
+.fadeIn {
+  opacity: 1;
 }
 
 .fadeOut {

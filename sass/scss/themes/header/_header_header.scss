@@ -6,7 +6,7 @@
   top: 0;
   right: 0;
   z-index: 90;
-  // border: 1px solid red;
+  // border: 1px dotted red;
 
   @include desktop {
     & {
@@ -22,7 +22,7 @@
         right: 0;
         @include transformY;
         border-left: 1px solid $color-lite;
-        z-index: -2;
+        z-index: -3;
       }
     }
   }

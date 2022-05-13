@@ -11,6 +11,10 @@ const scrolledNav = document.querySelectorAll(".scroll-nav");
 const sectionTitles = document.querySelectorAll(".section-title");
 const projectBoxes = document.querySelectorAll(".projects-box");
 const projectContainer = document.querySelector(".projects-container");
+const heroContainer = document.querySelector(".hero-container");
+const nameTitle = document.querySelector(".title");
+const nameSubtitle = document.querySelector(".subtitle");
+const btnBox = document.querySelector(".btn-box");
 
 // Media Query
 
@@ -18,6 +22,47 @@ const mediaQueryMobile = window.matchMedia("(min-width: 300px)");
 const mediaQueryTabletLandscapeMin = window.matchMedia("(min-width: 1024px)");
 const mediaQueryTabletLandscape = window.matchMedia("(max-width: 1023px)");
 const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
+
+// Load Title, Subtitle and CTA Button
+
+window.addEventListener("load", () => {
+  // Animetion on Load for Hero Section
+
+  nameTitle.classList.add("galleryAnimateIn");
+  nameSubtitle.classList.add("galleryAnimateIn");
+  btnBox.classList.add("galleryAnimateIn");
+});
+
+// Parallax Effect for Hero Section
+
+window.addEventListener("scroll", () => {
+  nameTitle.classList.remove("galleryAnimateIn");
+  nameSubtitle.classList.remove("galleryAnimateIn");
+  btnBox.classList.remove("galleryAnimateIn");
+  nameTitle.style.opacity = "1";
+  nameSubtitle.style.opacity = "1";
+  btnBox.style.opacity = "1";
+
+  // Set Scroll and Speed
+
+  let rate = window.pageYOffset;
+  let speed = rate * 0.3 + "px";
+  let speedFast = rate * 0.5 + "px";
+
+  // Parallax Effect when scrolling
+
+  nameTitle.style.transform = `translateX(${speed})`;
+  nameSubtitle.style.transform = `translateX(-${speed})`;
+  btnBox.style.transform = `translateY(${speedFast})`;
+
+  // Fade Out when scrolling
+
+  if (window.scrollY > 210) {
+    nameTitle.style.opacity = "0";
+    nameSubtitle.style.opacity = "0";
+    btnBox.style.opacity = "0";
+  }
+});
 
 // Intersection Observer for Section Titles
 
@@ -109,32 +154,6 @@ function addHoverLines() {
   });
 }
 
-// Parallax Effect in Hero Section
-
-const heroContainer = document.querySelector(".hero-container");
-const nameTitle = document.querySelector(".title");
-const nameSubtitle = document.querySelector(".subtitle");
-const btnBox = document.querySelector(".btn-box");
-
-window.addEventListener("scroll", () => {
-  let rate = window.pageYOffset;
-  let speed = rate * 0.3 + "px";
-  let speedFast = rate * 0.5 + "px";
-  // let speedFaster = rate * 0.8 + "px";
-
-  // Parallax Effect when scrolling
-
-  nameTitle.style.transform = `translateX(${speed})`;
-  nameSubtitle.style.transform = `translateX(-${speed})`;
-  btnBox.style.transform = `translateY(${speedFast})`;
-
-  // Fade Out when scrolling
-
-  nameTitle.classList.toggle("fadeOut", window.scrollY > 150);
-  nameSubtitle.classList.toggle("fadeOut", window.scrollY > 150);
-  btnBox.classList.toggle("fadeOut", window.scrollY > 250);
-});
-
 // Active added to Home Link when in desktop mode
 
 if (mediaQueryDesktop.matches === true) {
@@ -159,7 +178,8 @@ if (mediaQueryDesktop.matches === true) {
     scrolledNav.forEach((sn) => {
       const sectionTop = sn.offsetTop;
       const sectionHeight = sn.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+
+      if (scrollY >= sectionTop - sectionHeight / 3) {
         current = sn.getAttribute("id");
       }
     });
@@ -179,6 +199,20 @@ if (mediaQueryDesktop.matches === true) {
     });
   });
 }
+
+// Click Event: Line Effect Moves from Link to Link
+
+// navLinks.forEach((nl) => {
+//   nl.addEventListener("click", (e) => {
+//     const converted = e.currentTarget.getBoundingClientRect().top;
+
+//     let percentageToPixels = `${converted * 0.13}`;
+
+//     console.log(percentageToPixels);
+
+//     headerLinkLine.style.top = `${percentageToPixels}%`;
+//   });
+// });
 
 // Carousel Slider Function
 
