@@ -2,6 +2,7 @@
 
 // DOM Select Variables
 
+const header = document.querySelector(".header");
 const burgerOpen = document.querySelector(".burger-open");
 const burgerClose = document.querySelector(".burger-close");
 const nav = document.querySelector(".nav");
@@ -15,6 +16,7 @@ const heroContainer = document.querySelector(".hero-container");
 const nameTitle = document.querySelector(".title");
 const nameSubtitle = document.querySelector(".subtitle");
 const btnBox = document.querySelector(".btn-box");
+const contactBox = document.querySelector(".contact-box");
 
 // Media Query
 
@@ -31,6 +33,8 @@ window.addEventListener("load", () => {
   nameTitle.classList.add("galleryAnimateIn");
   nameSubtitle.classList.add("galleryAnimateIn");
   btnBox.classList.add("galleryAnimateIn");
+  if (mediaQueryTabletLandscapeMin.matches === true)
+    header.classList.add("galleryAnimateIn");
 });
 
 // Parallax Effect for Hero Section
@@ -39,6 +43,7 @@ window.addEventListener("scroll", () => {
   nameTitle.classList.remove("galleryAnimateIn");
   nameSubtitle.classList.remove("galleryAnimateIn");
   btnBox.classList.remove("galleryAnimateIn");
+
   nameTitle.style.opacity = "1";
   nameSubtitle.style.opacity = "1";
   btnBox.style.opacity = "1";
@@ -69,8 +74,17 @@ window.addEventListener("scroll", () => {
 const sectionObserverFunction = function (entries) {
   const [entry] = entries;
   console.log(entry);
-
   if (entry.isIntersecting) entry.target.classList.toggle("galleryAnimateIn");
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("section-title-contact")
+  )
+    contactBox.classList.add("scaleUp");
+
+  if (entry.isIntersecting && projectContainer.clientWidth < 200) {
+    projectContainer.classList.toggle("galleryAnimateIn");
+  }
 
   if (entry.isIntersecting && projectContainer.clientWidth > 200) {
     projectBoxes.forEach((pb) => {
@@ -199,20 +213,6 @@ if (mediaQueryDesktop.matches === true) {
     });
   });
 }
-
-// Click Event: Line Effect Moves from Link to Link
-
-// navLinks.forEach((nl) => {
-//   nl.addEventListener("click", (e) => {
-//     const converted = e.currentTarget.getBoundingClientRect().top;
-
-//     let percentageToPixels = `${converted * 0.13}`;
-
-//     console.log(percentageToPixels);
-
-//     headerLinkLine.style.top = `${percentageToPixels}%`;
-//   });
-// });
 
 // Carousel Slider Function
 

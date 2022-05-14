@@ -6,12 +6,15 @@
   top: 0;
   right: 0;
   z-index: 90;
+  animation-delay: 300ms;
+  // animation-duration: 1000ms;
   // border: 1px dotted red;
 
   @include desktop {
     & {
       width: 25rem;
       height: 100%;
+      opacity: 0;
 
       &::after {
         content: "";

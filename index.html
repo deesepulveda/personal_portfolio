@@ -15,13 +15,13 @@
     <!-- JAVASCRIPT -->
     <script defer src="./app.js/script.js"></script>
     <!-- FONT AWESOME CDN -->
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
   </head>
   <body>
     <!-- HEADER -->
@@ -232,8 +232,32 @@
     </section>
     <section class="sections section-contact scroll-nav" id="contact-contact">
       <!-- Section Title -->
-      <div class="section-title">
+      <div class="section-title section-title-contact">
         <p>contact</p>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-box">
+          <form>
+            <div class="user-box">
+              <input type="text" id="name" name="name" required="" />
+              <label>full name</label>
+            </div>
+            <div class="user-box">
+              <input type="email" id="email" name="email" required="" />
+              <label>email</label>
+            </div>
+            <div class="user-box">
+              <input type="text" id="message" name="message" required="" />
+              <label>message</label>
+            </div>
+            <button>submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="social-icon-wrapper">
+        <div class="icons"><i class="fa-brands fa-github"></i></div>
+        <div class="icons"><i class="fa-brands fa-linkedin"></i></div>
+        <div class="icons"><i class="fa-brands fa-twitter-square"></i></div>
       </div>
     </section>
     <footer class="footer">

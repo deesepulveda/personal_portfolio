@@ -1,5 +1,6 @@
 .section-project {
   height: 80rem;
+  margin-bottom: 5rem;
   position: relative;
 
   @include desktop {
@@ -52,6 +53,7 @@
         overflow: hidden;
         cursor: pointer;
         @include transit4;
+        animation-delay: 300ms;
 
         &:nth-of-type(1) {
           animation-delay: 300ms;

@@ -29,7 +29,8 @@
   .subtitle,
   .btn-box {
     opacity: 0;
-    @include transit6;
+    @include transit3;
+    animation-delay: 300ms;
   }
 
   .title,
