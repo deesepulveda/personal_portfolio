@@ -75,8 +75,8 @@
 // Animation Class
 
 .galleryAnimateIn {
-  animation: galleryAnimation 1000ms ease-in-out both;
-  -webkit-animation: galleryAnimation 1000ms ease-in-out both;
+  animation: galleryAnimation 1000ms ease both;
+  -webkit-animation: galleryAnimation 1000ms ease both;
 }
 
 // Keyframes for Animations

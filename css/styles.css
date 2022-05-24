@@ -40,8 +40,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 90;
-  animation-delay: 300ms; }
+  z-index: 90; }
   @media only screen and (min-width: 1224px) {
     .header {
       width: 25rem;
@@ -1061,8 +1060,8 @@ body {
             background-color: #5bc4bf;
             color: #050505; }
     .section-contact .contact-wrapper .scaleUp {
-      animation: scaling 1000ms ease-in-out 0.5s forwards;
-      -webkit-animation: scaling 1000ms ease-in-out 0.5s forwards; }
+      animation: scaling 1000ms ease-out 0.5s forwards;
+      -webkit-animation: scaling 1000ms ease-out 0.5s forwards; }
   .section-contact .social-icon-wrapper {
     width: 100%;
     height: 10rem;
@@ -1074,35 +1073,44 @@ body {
     @media only screen and (min-width: 1224px) {
       .section-contact .social-icon-wrapper {
         bottom: 10%; } }
-    .section-contact .social-icon-wrapper .fa-brands {
-      font-size: 3rem;
-      margin: 0 1rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-      -webkit-transition: 0.3s ease;
-      -moz-transition: 0.3s ease;
-      -ms-transition: 0.3s ease;
-      -o-transition: 0.3s ease; }
-      .section-contact .social-icon-wrapper .fa-brands:hover {
-        color: #5bc4bf;
-        transform: scale(1.3);
-        -webkit-transform: scale(1.3);
-        -moz-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        -o-transform: scale(1.3); }
-      @media only screen and (min-width: 1224px) {
-        .section-contact .social-icon-wrapper .fa-brands {
-          font-size: 4rem;
-          margin: 0 1.5rem; } }
+    .section-contact .social-icon-wrapper .icons-link {
+      text-decoration: none;
+      color: #ffffff;
+      cursor: pointer; }
+      .section-contact .social-icon-wrapper .icons-link .fa-brands {
+        font-size: 3rem;
+        margin: 0 1rem;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease; }
+        .section-contact .social-icon-wrapper .icons-link .fa-brands:hover {
+          color: #5bc4bf;
+          transform: scale(1.3);
+          -webkit-transform: scale(1.3);
+          -moz-transform: scale(1.3);
+          -ms-transform: scale(1.3);
+          -o-transform: scale(1.3); }
+        @media only screen and (min-width: 1224px) {
+          .section-contact .social-icon-wrapper .icons-link .fa-brands {
+            font-size: 4rem;
+            margin: 0 1.5rem; } }
 
 @keyframes scaling {
-  from {
+  0% {
     transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0); }
-  to {
+  60% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2); }
+  100% {
     transform: scale(1);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -1130,6 +1138,9 @@ body {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     border-top: 0.1rem dotted rgba(115, 111, 111, 0.808); }
+    @media only screen and (min-width: 1224px) {
+      .footer::after {
+        width: 60%; } }
   @media only screen and (min-width: 768px) {
     .footer {
       height: 10rem;
@@ -1189,8 +1200,8 @@ body {
           width: 50%; } }
 
 .galleryAnimateIn {
-  animation: galleryAnimation 1000ms ease-in-out both;
-  -webkit-animation: galleryAnimation 1000ms ease-in-out both; }
+  animation: galleryAnimation 1000ms ease both;
+  -webkit-animation: galleryAnimation 1000ms ease both; }
 
 @keyframes galleryAnimation {
   0% {
