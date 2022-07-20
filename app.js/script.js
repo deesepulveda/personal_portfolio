@@ -30,9 +30,9 @@ const mediaQueryDesktop = window.matchMedia("(min-width: 1224px)");
 window.addEventListener("load", () => {
   // Animetion on Load for Hero Section
 
-  nameTitle.classList.add("galleryAnimateIn");
-  nameSubtitle.classList.add("galleryAnimateIn");
-  btnBox.classList.add("galleryAnimateIn");
+  nameTitle.classList.add("galleryAnimateUp");
+  nameSubtitle.classList.add("galleryAnimateUp");
+  btnBox.classList.add("galleryAnimateUp");
   if (mediaQueryTabletLandscapeMin.matches === true)
     header.classList.add("galleryAnimateIn");
 });
@@ -40,9 +40,9 @@ window.addEventListener("load", () => {
 // Parallax Effect for Hero Section
 
 window.addEventListener("scroll", () => {
-  nameTitle.classList.remove("galleryAnimateIn");
-  nameSubtitle.classList.remove("galleryAnimateIn");
-  btnBox.classList.remove("galleryAnimateIn");
+  nameTitle.classList.remove("galleryAnimateUp");
+  nameSubtitle.classList.remove("galleryAnimateUp");
+  btnBox.classList.remove("galleryAnimateUp");
 
   nameTitle.style.opacity = "1";
   nameSubtitle.style.opacity = "1";
@@ -51,18 +51,19 @@ window.addEventListener("scroll", () => {
   // Set Scroll and Speed
 
   let rate = window.pageYOffset;
-  let speed = rate * 0.3 + "px";
-  let speedFast = rate * 0.5 + "px";
+  let speed = rate * 0.5 + "px";
+  let speedFast = rate * 1 + "px";
+  let speedFastest = rate * 2 + "px";
 
   // Parallax Effect when scrolling
 
-  nameTitle.style.transform = `translateX(${speed})`;
-  nameSubtitle.style.transform = `translateX(-${speed})`;
-  btnBox.style.transform = `translateY(${speedFast})`;
+  nameTitle.style.transform = `translateX(${speedFastest})`;
+  nameSubtitle.style.transform = `translateX(${speedFast})`;
+  btnBox.style.transform = `translateX(${speed})`;
 
   // Fade Out when scrolling
 
-  if (window.scrollY > 210) {
+  if (window.scrollY > 300) {
     nameTitle.style.opacity = "0";
     nameSubtitle.style.opacity = "0";
     btnBox.style.opacity = "0";
@@ -92,7 +93,7 @@ const sectionObserverFunction = function (entries) {
     });
   }
 
-  //   // Stop Observer after Intersecting
+  // Stop Observer after Intersecting
 
   if (entry.isIntersecting) sectionObserver.unobserve(entry.target);
 };
