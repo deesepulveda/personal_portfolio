@@ -102,14 +102,15 @@
       .nav-links {
         color: $color-lite;
         font-size: 3rem;
-        font-family: "Bahnscrift", sans-serif;
+        // font-family: "Bahnscrift", sans-serif;
+        font-family: $secondary-font;
         text-decoration: none;
         letter-spacing: 0.5rem;
         @include transit3;
 
         @include desktop {
           & {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             letter-spacing: 0.4rem;
           }
         }

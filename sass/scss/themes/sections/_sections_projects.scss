@@ -465,6 +465,19 @@
                 @include flex-center;
                 justify-content: space-evenly;
 
+                @include desktop {
+                  & {
+                    width: 35%;
+                  }
+                }
+
+                @include XlargeDesktop {
+                  & {
+                    width: 20%;
+                    height: 3rem;
+                  }
+                }
+
                 img {
                   width: auto;
                   height: 100%;
