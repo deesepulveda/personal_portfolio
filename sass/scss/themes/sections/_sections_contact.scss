@@ -4,19 +4,19 @@
 
   @include tabletPortrait {
     & {
-      height: 85rem;
+      height: 95rem;
     }
   }
 
   @include desktop {
     & {
-      height: 95rem;
+      height: 110rem;
     }
   }
 
   @include largeDesktop {
     & {
-      height: 110rem;
+      height: 120rem;
     }
   }
 

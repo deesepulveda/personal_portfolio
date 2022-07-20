@@ -663,9 +663,14 @@ body {
   margin-bottom: 5rem;
   position: relative;
 }
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 768px) {
   .section-project {
     height: 95rem;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .section-project {
+    height: 110rem;
   }
 }
 @media only screen and (min-width: 1824px) {
@@ -1093,16 +1098,28 @@ body {
   margin: 2rem 0 0 1rem;
   text-align: start;
   list-style-type: none;
-  font-size: 1.75rem;
   font-family: "Bahnscrift", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
 }
 .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li span {
-  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  font-size: 2rem;
   color: rgba(115, 111, 111, 0.808);
 }
+@media only screen and (min-width: 1024px) {
+  .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li span {
+    font-size: 2.5rem;
+  }
+}
+.section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li p {
+  font-size: 1.5rem;
+}
 .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li .made-icons {
-  width: 40%;
-  height: 3rem;
+  width: 50%;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1128,7 +1145,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li a {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 .section-project .projects-modal-container .modal-content-container .modal-content-info .modal-project-info .modal-project-info-ul .modal-project-info-li a:hover {
@@ -1229,17 +1246,17 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .section-contact {
-    height: 85rem;
+    height: 95rem;
   }
 }
 @media only screen and (min-width: 1224px) {
   .section-contact {
-    height: 95rem;
+    height: 110rem;
   }
 }
 @media only screen and (min-width: 1824px) {
   .section-contact {
-    height: 110rem;
+    height: 120rem;
   }
 }
 .section-contact .contact-wrapper {

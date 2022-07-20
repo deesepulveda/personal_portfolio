@@ -3,9 +3,15 @@
   margin-bottom: 5rem;
   position: relative;
 
-  @include desktop {
+  @include tabletPortrait {
     & {
       height: 95rem;
+    }
+  }
+
+  @include desktop {
+    & {
+      height: 110rem;
     }
   }
 
@@ -433,17 +439,29 @@
               margin: 2rem 0 0 1rem;
               text-align: start;
               list-style-type: none;
-              font-size: 1.75rem;
               font-family: $tertiary-font;
+              @include flex-center;
+              justify-content: flex-start;
 
               span {
-                font-size: 2.5rem;
+                margin-right: 0.5rem;
+                font-size: 2rem;
                 color: $color-gray-lite;
+
+                @include tabletLandscape {
+                  & {
+                    font-size: 2.5rem;
+                  }
+                }
+              }
+
+              p {
+                font-size: 1.5rem;
               }
 
               .made-icons {
-                width: 40%;
-                height: 3rem;
+                width: 50%;
+                height: 2.5rem;
                 @include flex-center;
                 justify-content: space-evenly;
 
@@ -466,7 +484,7 @@
 
                 @include tabletPortrait {
                   & {
-                    font-size: 1.75rem;
+                    font-size: 1.5rem;
                   }
                 }
 
