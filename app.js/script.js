@@ -73,7 +73,7 @@ window.addEventListener("scroll", () => {
 
 const sectionObserverFunction = function (entries) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
   if (entry.isIntersecting) entry.target.classList.toggle("galleryAnimateIn");
 
   if (
@@ -197,6 +197,8 @@ if (mediaQueryDesktop.matches === true) {
         current = sn.getAttribute("id");
       }
     });
+
+    // console.log(current);
 
     navLinks.forEach((nl) => {
       if (nl.classList.contains(current)) {
