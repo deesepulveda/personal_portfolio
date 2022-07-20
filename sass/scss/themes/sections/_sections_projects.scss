@@ -441,6 +441,23 @@
                 color: $color-gray-lite;
               }
 
+              .made-icons {
+                width: 40%;
+                height: 3rem;
+                @include flex-center;
+                justify-content: space-evenly;
+
+                img {
+                  width: auto;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+
+              .plus {
+                color: $color-lite;
+              }
+
               a {
                 text-decoration: none;
                 color: $color-lite;
@@ -457,6 +474,11 @@
                   color: $color-blue;
                 }
               }
+            }
+
+            .site-link-icons {
+              @include flex-center;
+              justify-content: flex-start;
             }
           }
         }
@@ -516,7 +538,7 @@
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
+    // -ms-transform: translateX(-100%);
     -o-transform: translateX(-100%);
   }
 
@@ -525,7 +547,7 @@
     transform: translateX(3%);
     -webkit-transform: translateX(3%);
     -moz-transform: translateX(3%);
-    -ms-transform: translateX(3%);
+    // -ms-transform: translateX(3%);
     -o-transform: translateX(3%);
   }
 
