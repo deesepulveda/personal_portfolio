@@ -1,13 +1,101 @@
 .section-about {
-  height: 200rem;
-  //   border: 1px solid red;
+  height: auto;
+  margin-bottom: 15rem;
   position: relative;
 
-  // .section-title-about {
-  //   position: absolute;
-  //   position: sticky;
-  //   top: 0;
-  // }
+  .section-title-about {
+    background-color: $color-dark;
+    @include transit4;
+    z-index: 5;
+  }
+
+  .about-content-container {
+    width: 100%;
+    height: calc((100% - 10rem) - 3rem);
+    margin-top: 3rem;
+
+    @include desktop {
+      & {
+        height: calc((100% - 15rem) - 3rem);
+      }
+    }
+
+    .about-content-info {
+      width: 90%;
+      height: 60rem;
+      margin: 0 auto 10rem;
+      position: relative;
+      @include transit4;
+      @include sticky-position;
+      top: 22%;
+
+      .about-content-info-boxes {
+        width: 100%;
+        height: 30%;
+        // opacity: 0;
+        margin-top: 20rem;
+        font-size: 3rem;
+        @include transit6;
+        @include flex-center-col;
+
+        .about-content-info-boxes-title {
+          margin-bottom: 4rem;
+          font-size: 2.2rem;
+          color: $color-blue;
+        }
+
+        .slide-boxes-images-container {
+          @include keep-it-hundo;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+          grid-gap: 1rem;
+
+          .slide-boxes-images {
+            width: 100%;
+            height: 5rem;
+
+            img {
+              @include keep-it-hundo;
+              object-fit: contain;
+            }
+          }
+        }
+
+        .slide-boxes {
+          width: 80%;
+          height: 5rem;
+          text-align: start;
+
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          p {
+            color: $color-gray-lite;
+            font-size: 1.5rem;
+            font-family: $tertiary-font;
+
+            span {
+              color: $color-lite;
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+
+      .slideFarRight {
+        transform: translateX(200%);
+        -webkit-transform: translateX(200%);
+        -moz-transform: translateX(200%);
+        -ms-transform: translateX(200%);
+        -o-transform: translateX(200%);
+      }
+
+      .opacityOn {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 // JS Class
@@ -15,5 +103,9 @@
 .stickyTop {
   position: absolute;
   position: sticky;
-  top: 0;
+  top: -2%;
+}
+
+.opacityOn {
+  opacity: 1;
 }

@@ -228,10 +228,6 @@ projectBoxes.forEach((p, i) => {
   if (projectContainer.clientWidth <= 150) {
     p.style.transform = `translateX(${100 * i}%)`;
   }
-  // if (projectContainer.clientWidth > p.clientWidth) {
-  //   // p.style.transform = "none";
-  //   console.log(p.clientWidth);
-  // }
 });
 
 let currentSlide = 0;
@@ -337,4 +333,69 @@ modalClose.addEventListener("click", () => {
   modalContainer.classList.remove("galleryFromLeft");
   modalContainer.classList.add("galleryBackLeft");
   modalContainer.classList.add("closeModal");
+});
+
+// About Section
+
+const aboutTitle = document.querySelector(".section-title-about");
+const contactSection = document.querySelector(".section-contact");
+const aboutSection = document.querySelector(".section-about");
+const aboutContentInfo = document.querySelectorAll(".about-content-info");
+const aboutContentInfoBoxes = document.querySelectorAll(
+  ".about-content-info-boxes"
+);
+const slideBoxes = document.querySelectorAll(".slide-boxes");
+
+// Intersection Observer for About Part I
+
+const sectionAboutFunction = function (entries) {
+  const [entry] = entries;
+  // console.log(entry);
+
+  // entry.target.classList.add("slideFarRight", entry.isIntersecting);
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("about-content-current")
+  ) {
+    aboutContentInfoBoxes[0].classList.add("slideFarRight");
+  }
+
+  if (
+    !entry.isIntersecting &&
+    entry.target.classList.contains("about-content-current")
+  ) {
+    aboutContentInfoBoxes[0].classList.remove("slideFarRight");
+  }
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("about-content-future")
+  ) {
+    aboutContentInfoBoxes[1].classList.add("slideFarRight");
+    // aboutTitle.classList.remove("stickyTop");
+  }
+
+  if (
+    !entry.isIntersecting &&
+    entry.target.classList.contains("about-content-future")
+  ) {
+    aboutContentInfoBoxes[1].classList.remove("slideFarRight");
+    // aboutTitle.classList.add("stickyTop");
+  }
+};
+
+const sectionAboutOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-100px",
+};
+
+const sectionAboutObserver = new IntersectionObserver(
+  sectionAboutFunction,
+  sectionAboutOptions
+);
+
+aboutContentInfo.forEach((ab) => {
+  sectionAboutObserver.observe(ab);
 });

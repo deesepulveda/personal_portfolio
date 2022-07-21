@@ -1252,14 +1252,115 @@ body {
   }
 }
 .section-about {
-  height: 200rem;
+  height: auto;
+  margin-bottom: 15rem;
   position: relative;
+}
+.section-about .section-title-about {
+  background-color: #050505;
+  transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  z-index: 5;
+}
+.section-about .about-content-container {
+  width: 100%;
+  height: calc(100% - 10rem - 3rem);
+  margin-top: 3rem;
+}
+@media only screen and (min-width: 1224px) {
+  .section-about .about-content-container {
+    height: calc(100% - 15rem - 3rem);
+  }
+}
+.section-about .about-content-container .about-content-info {
+  width: 90%;
+  height: 60rem;
+  margin: 0 auto 10rem;
+  position: relative;
+  transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 22%;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes {
+  width: 100%;
+  height: 30%;
+  margin-top: 20rem;
+  font-size: 3rem;
+  transition: 0.6s ease;
+  -webkit-transition: 0.6s ease;
+  -moz-transition: 0.6s ease;
+  -ms-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .about-content-info-boxes-title {
+  margin-bottom: 4rem;
+  font-size: 2.2rem;
+  color: #5bc4bf;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes-images-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 1rem;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes-images-container .slide-boxes-images {
+  width: 100%;
+  height: 5rem;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes-images-container .slide-boxes-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes {
+  width: 80%;
+  height: 5rem;
+  text-align: start;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes p {
+  color: rgba(115, 111, 111, 0.808);
+  font-size: 1.5rem;
+  font-family: "Bahnscrift", sans-serif;
+}
+.section-about .about-content-container .about-content-info .about-content-info-boxes .slide-boxes p span {
+  color: #ffffff;
+  margin-left: 1rem;
+}
+.section-about .about-content-container .about-content-info .slideFarRight {
+  transform: translateX(200%);
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  -o-transform: translateX(200%);
+}
+.section-about .about-content-container .about-content-info .opacityOn {
+  opacity: 1;
 }
 
 .stickyTop {
   position: absolute;
   position: sticky;
-  top: 0;
+  top: -2%;
+}
+
+.opacityOn {
+  opacity: 1;
 }
 
 .section-contact {
@@ -1540,6 +1641,11 @@ body {
   align-items: flex-end;
   opacity: 0;
   animation-delay: 300ms;
+  transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
 }
 @media only screen and (min-width: 1224px) {
   .section-title {
@@ -1605,6 +1711,7 @@ body {
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
   }
   60% {
@@ -1612,6 +1719,7 @@ body {
     transform: translateY(-10%);
     -webkit-transform: translateY(-10%);
     -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
     -o-transform: translateY(-10%);
   }
   100% {
@@ -1619,6 +1727,7 @@ body {
     transform: translateY(0);
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
     -o-transform: translateY(0);
   }
 }
