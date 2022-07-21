@@ -383,6 +383,22 @@ const sectionAboutFunction = function (entries) {
     aboutContentInfoBoxes[1].classList.remove("slideFarRight");
     // aboutTitle.classList.add("stickyTop");
   }
+
+  if (
+    entry.isIntersecting &&
+    entry.target.classList.contains("about-content-blank")
+  ) {
+    aboutContentInfoBoxes[2].classList.add("slideFarRight");
+    // aboutTitle.classList.remove("stickyTop");
+  }
+
+  if (
+    !entry.isIntersecting &&
+    entry.target.classList.contains("about-content-blank")
+  ) {
+    aboutContentInfoBoxes[2].classList.remove("slideFarRight");
+    // aboutTitle.classList.add("stickyTop");
+  }
 };
 
 const sectionAboutOptions = {
