@@ -102,8 +102,8 @@
       .nav-links {
         color: $color-lite;
         font-size: 3rem;
-        // font-family: "Bahnscrift", sans-serif;
-        font-family: $secondary-font;
+        font-family: "Bahnscrift", sans-serif;
+
         text-decoration: none;
         letter-spacing: 0.5rem;
         @include transit3;
@@ -112,6 +112,7 @@
           & {
             font-size: 1.4rem;
             letter-spacing: 0.4rem;
+            font-family: $secondary-font;
           }
         }
 
