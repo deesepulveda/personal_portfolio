@@ -1253,21 +1253,48 @@ body {
   }
 }
 .section-about {
-  height: 300rem;
-  margin-bottom: 25rem;
+  height: 80rem;
   position: relative;
-  border: 1px solid red;
 }
 .section-about .section-title-about {
   background-color: #050505;
-  transition: 0.4s ease;
-  -webkit-transition: 0.4s ease;
-  -moz-transition: 0.4s ease;
-  -ms-transition: 0.4s ease;
-  -o-transition: 0.4s ease;
-  position: sticky;
-  position: -webkit-sticky;
-  top: -2%;
+}
+.section-about .about-content-container {
+  width: 100%;
+  max-width: 50rem;
+  height: 65%;
+  margin: 7rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section-about .about-content-container .about-content-info {
+  width: 90%;
+  height: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: start;
+  color: rgba(115, 111, 111, 0.808);
+}
+.section-about .about-content-container .about-content-info span {
+  margin-left: 0.5rem;
+  color: #ffffff;
+}
+.section-about .about-content-container .about-content-info .about-content-info-image-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.section-about .about-content-container .about-content-info .about-content-info-image-container img {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.5rem;
+  object-fit: contain;
 }
 
 .section-contact {

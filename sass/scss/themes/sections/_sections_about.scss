@@ -1,13 +1,49 @@
 .section-about {
-  height: 300rem;
-  margin-bottom: 25rem;
+  height: 80rem;
   position: relative;
-  border: 1px solid red;
 
   .section-title-about {
     background-color: $color-dark;
-    @include transit4;
-    @include sticky-position;
-    top: -2%;
+    // @include transit4;
+    // @include sticky-position;
+    // top: -2%;
+  }
+
+  .about-content-container {
+    width: 100%;
+    max-width: 50rem;
+    height: 65%;
+    margin: 7rem auto 0;
+    @include flex-center-col;
+    // border: 1px solid yellow;
+
+    .about-content-info {
+      width: 90%;
+      height: auto;
+      margin-top: 2rem;
+      padding: 1rem;
+      font-size: 2rem;
+      text-align: start;
+      color: $color-gray-lite;
+
+      span {
+        margin-left: 0.5rem;
+        color: $color-lite;
+      }
+
+      .about-content-info-image-container {
+        width: 100%;
+        height: auto;
+        @include flex-center;
+        justify-content: flex-start;
+
+        img {
+          width: 5rem;
+          height: 5rem;
+          padding: 0.5rem;
+          object-fit: contain;
+        }
+      }
+    }
   }
 }
